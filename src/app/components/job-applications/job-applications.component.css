@@ -1,0 +1,36 @@
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+.cv-td {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.cv-button,
+.json-button {
+  height: 40px;
+  border: none;
+  width: 100px;
+  background-color: #e65c00;
+  color: white;
+}
+.delete-button {
+  color: #e65c00;
+}
+.delete-button:hover,
+.cv-button:hover,
+.json-button:hover {
+  color: #b64900;
+}

@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap");
+.main-page {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+.cover-image {
+  height: 540px;
+}
+.image {
+  height: 540px;
+  width: 100%;
+}
+.image-collage {
+  height: 200px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.image {
+  height: 100%;
+}
+.text {
+  width: 800px;
+  text-align: center;
+  margin: 30px auto;
+}
+.contact-button {
+  height: 40px;
+  background-color: #e65c00;
+  color: white;
+  width: 180px;
+  border: none;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+.services {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+.subservices {
+  display: flex;
+  flex-direction: column;
+}
+.services-1,
+.services-2,
+.services-3,
+.services-4 {
+  display: flex;
+  flex-direction: row;
+}
+.services-2,
+.services-4 {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+.description {
+  width: 400px;
+  margin-left: 50px;
+}
+mat-icon {
+  transform: scale(3);
+  padding: 20px;
+  color: #e65c00;
+}
+.boxes {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  flex-direction: row;
+}
+.box-1,
+.box-2,
+.box-3,
+.box-4 {
+  width: 25%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+}
+.box-1 {
+  background-color: #336699;
+}
+.box-2 {
+  background-color: #ff8c1a;
+}
+.box-3 {
+  background-color: #2d5986;
+}
+.box-4 {
+  background-color: #e67300;
+}
+.image-button {
+  height: 30px;
+  width: 30px;
+}
+.call-image,
+.team-image {
+  height: 360px;
+  width: 530px;
+}
+
+.information {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+.contact,
+.team-company {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  justify-content: space-around;
+}
+
+.contact-text {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+}
+.team-text {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+}
+
+footer {
+  background-color: #e67300;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 220px;
+}
+.section-1,
+.section-2,
+.section-3,
+.section-4 {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.section-1 {
+  width: 200px;
+}
+.section-2 {
+  width: 140px;
+}

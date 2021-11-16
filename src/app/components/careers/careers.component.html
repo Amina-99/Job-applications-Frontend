@@ -1,0 +1,97 @@
+<div class="container">
+  <div class="careers">
+    <div class="title">
+      <h2>Would you like to join us?</h2>
+      <h3>
+        Feel free to send your CV and contact information and we<br />
+        will consider it in future job openings.
+      </h3>
+    </div>
+    <mat-dialog-content>
+      <form [formGroup]="applicationForm" (ngSubmit)="sendApplication()">
+        <mat-form-field appearance="outline">
+          <mat-label>First name</mat-label>
+          <input
+            matInput
+            formControlName="firstName"
+            [class.is-invalid]="
+              applicationForm.controls['firstName'].invalid &&
+              applicationForm.controls['firstName'].touched
+            "
+            required
+          />
+          <mat-error
+            *ngIf="
+              applicationForm.controls['firstName'].invalid &&
+              applicationForm.controls['firstName'].touched
+            "
+          >
+            <span
+              *ngIf="applicationForm.controls['firstName'].errors?.required"
+            >
+              This field is required
+            </span>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Last name</mat-label>
+          <input
+            matInput
+            formControlName="lastName"
+            [class.is-invalid]="
+              applicationForm.controls['lastName'].invalid &&
+              applicationForm.controls['lastName'].touched
+            "
+            required
+          />
+          <mat-error
+            *ngIf="
+              applicationForm.controls['lastName'].invalid &&
+              applicationForm.controls['lastName'].touched
+            "
+          >
+            <span *ngIf="applicationForm.controls['lastName'].errors?.required">
+              This field is required
+            </span>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input
+            matInput
+            formControlName="email"
+            name="email"
+            [class.is-invalid]="
+              applicationForm.controls['email'].invalid &&
+              applicationForm.controls['email'].touched
+            "
+            required
+          />
+          <mat-error *ngIf="applicationForm.controls.email.invalid">{{
+            getErrorMessageEmail()
+          }}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Phone</mat-label>
+          <input matInput formControlName="phone" required />
+          <mat-error *ngIf="applicationForm.controls.email.invalid">{{
+            getErrorMessagePhone()
+          }}</mat-error>
+        </mat-form-field>
+        <div>
+          <label for="myfile" class="upload-label">Select a file:<br /></label>
+          <input
+            type="file"
+            id="myfile"
+            name="myfile"
+            (change)="handleFileInput($event)"
+          /><br /><br />
+        </div>
+        <button type="submit" class="submit-button">Send</button>
+      </form>
+    </mat-dialog-content>
+  </div>
+  <div class="image-div">
+    <img src="/assets/interview.jpg" class="image" />
+  </div>
+</div>

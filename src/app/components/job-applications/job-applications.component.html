@@ -1,0 +1,33 @@
+<table>
+  <tr>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Actions</th>
+    <th>Delete application</th>
+  </tr>
+  <tr *ngFor="let application of applications">
+    <td>{{ application?.firstName }}</td>
+    <td>{{ application?.lastName }}</td>
+    <td>{{ application?.email }}</td>
+    <td>{{ application?.phone }}</td>
+    <td class="cv-td">
+      <button class="cv-button" (click)="viewCV(application.id)">
+        View CV
+      </button>
+      <button class="json-button" (click)="exportJSON(application)">
+        Export JSON
+      </button>
+    </td>
+    <td>
+      <button
+        mat-icon-button
+        (click)="delete(application.id)"
+        class="delete-button"
+      >
+        <mat-icon>delete</mat-icon>
+      </button>
+    </td>
+  </tr>
+</table>
