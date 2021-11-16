@@ -5,6 +5,8 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { JobApplicationService } from 'src/app/services/job-application.service';
 
 @Component({
@@ -18,7 +20,9 @@ export class CareersComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private _jobApplicationService: JobApplicationService
+    private _jobApplicationService: JobApplicationService,
+    private snackBar: MatSnackBar, 
+    private router : Router
   ) {}
 
   ngOnInit() {
@@ -58,14 +62,23 @@ export class CareersComponent implements OnInit {
   }
 
   sendApplication() {
+    let message: string = 'Successfully sent application.';
+    let action: string = 'Close';
+    let invalidFormMessage: string = 'Something went wrong.';
     const formData: FormData = new FormData();
     formData.append('CV', this.fileToUpload);
     formData.append('firstName', this.field.firstName.value);
     formData.append('lastName', this.field.lastName.value);
     formData.append('email', this.field.email.value);
     formData.append('phone', this.field.phone.value);
-    this._jobApplicationService
-      .sendJobApplication(formData)
-      .subscribe((_) => {});
+    this._jobApplicationService.sendJobApplication(formData).subscribe(
+      (_) => {
+        this.snackBar.open(message, action, { duration: 5000 });
+        this.router.navigate(['']);
+      },
+      (error) => {
+        this.snackBar.open(invalidFormMessage, action, { duration: 5000 });
+      }
+    );
   }
 }
